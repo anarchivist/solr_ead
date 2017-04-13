@@ -29,4 +29,13 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'byebug'
   gem.add_development_dependency 'rdoc'
   gem.add_development_dependency 'jettywrapper'
+
+  if RUBY_VERSION < '2.2.2'
+    gem.add_dependency 'activesupport', '< 5'
+  end
+
+  if RUBY_VERSION < '2.1'
+    gem.add_dependency 'nokogiri', '< 1.7'
+  end
+
 end
